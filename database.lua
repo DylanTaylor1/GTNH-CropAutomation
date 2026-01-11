@@ -1,7 +1,9 @@
 local gps = require('gps')
 local scanner = require('scanner')
+local action = require('action')
 local config = require('config')
 local events = require('events')
+local robot = require('robot')
 local storage = {}
 local reverseStorage = {}
 local farm = {}
@@ -53,6 +55,27 @@ local function nextStorageSlot()
     return #storage + 1
 end
 
+local function analyzeStorage(existingTarget)
+    if not config.checkStorageBefore then
+        return
+    end
+    local targetCropName = getFarm()[1].name
+    local storage = getStorage()
+    for slot=1, config.storageFarmArea, 1 do
+        gps.go(gps.storageSlotToPos(slot))
+        local crop = scanner.scan()
+        if crop.name ~= 'air' then
+            if (existingTarget == true and crop.name ~= targetCropName) then
+                action.clearDown()
+            elseif scanner.isWeed(crop, 'storage') then
+                action.clearDown()
+            else
+                updateStorage(slot, crop)
+            end
+        end
+    end
+end
+
 
 return {
     getFarm = getFarm,
@@ -62,5 +85,6 @@ return {
     resetStorage = resetStorage,
     addToStorage = addToStorage,
     existInStorage = existInStorage,
-    nextStorageSlot = nextStorageSlot
+    nextStorageSlot = nextStorageSlot,
+    analyzeStorage = analyzeStorage
 }

@@ -4,7 +4,6 @@ local gps = require('gps')
 local scanner = require('scanner')
 local config = require('config')
 local events = require('events')
-local storage = require('storage')
 local breedRound = 0
 local lowestTier
 local lowestTierSlot
@@ -181,7 +180,7 @@ local function main()
 
     -- First Run
     tierOnce(true)
-    storage.analyzeStorage(false)
+    database.analyzeStorage(false)
     action.restockAll()
     updateLowest()
 
