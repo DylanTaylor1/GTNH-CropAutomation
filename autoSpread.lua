@@ -142,7 +142,7 @@ local function main()
 
     -- First Run
     spreadOnce(true)
-    database.analyzeStorage(true)
+    action.analyzeStorage(true)
     action.restockAll()
 
     -- Loop

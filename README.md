@@ -118,7 +118,7 @@ Turn off the OC Charger to **pause** the robot during any of these programs. The
 
 8) **Config changes are not saving.** Any changes made to config.lua must be saved before restarting the robot. Save changes by pressing CTRL+S and exit with CTRL+W.
 
-9) **The robot fails to properly teleport crops to the storage farm.** _Make sure your storage farm's maximum size matches the Transvector Dislocator's maximum range (default: 16 blocks)._
+9) **The robot fails to properly teleport crops to the storage farm.** Ensure that the entire storage farm is within the 16 block range of the Transvector Dislocator.
 
 ## Recommended Crops
 
@@ -179,4 +179,4 @@ To search for seed bags with growth 0-21, enter
 - The crop bot does not detect when it runs out of crop sticks.
 
 ## Thanks
-I (Fox) put a lot of time into this project, but I would like to give a huge thanks to huchenlei and xyqyear for their initial implementations and letting me take this project even further! Shoutout to Mozzg for also contributing to the repo and Sargates for helping with the RegEx!
+I (Fox) put a lot of time into this project, but I would like to give a huge thanks to huchenlei and xyqyear for their initial implementations and letting me take this project even further! Shoutout to Mozzg and Mderoulou for contributing to the repo and Sargates for helping with the RegEx!

@@ -31,6 +31,7 @@ local function fullInventory()
     return true
 end
 
+
 local function withSelectedSlot(fn, configTool, checkFullInventory)
     local selectedSlot = robot.select()
     if checkFullInventory == true then
@@ -46,6 +47,7 @@ local function withSelectedSlot(fn, configTool, checkFullInventory)
     fn()
     robot.select(selectedSlot)
 end
+
 
 local function restockStick()
     withSelectedSlot(function()
@@ -80,9 +82,9 @@ local function dumpInventory()
     end)
 end
 
+
 local function placeCropStick(count)
     withSelectedSlot(function()
-        local selectedSlot = robot.select()
 
         if count == nil then
             count = 1
@@ -105,11 +107,13 @@ local function placeCropStick(count)
     end)
 end
 
+
 local function pulseDown()
     redstone.setOutput(sides.down, 15)
     os.sleep(0.1)
     redstone.setOutput(sides.down, 0)
 end
+
 
 local function deweed()
     withSelectedSlot(function()
@@ -229,6 +233,7 @@ local function charge()
     until fullyCharged()
 end
 
+
 local function clearDown()
     withSelectedSlot(function()
         inventory_controller.equip()
@@ -238,6 +243,7 @@ local function clearDown()
         inventory_controller.equip()
     end, config.spadeSlot, true)
 end
+
 
 function restockAll()
     dumpInventory()
@@ -256,6 +262,26 @@ local function initWork()
 end
 
 
+local function analyzeStorage(existingTarget)
+    if config.checkStorageBefore then
+        local targetCropName = database.getFarm()[1].name
+        for slot=1, config.storageFarmArea, 1 do
+            gps.go(gps.storageSlotToPos(slot))
+            local crop = scanner.scan()
+            if crop.name ~= 'air' then
+                if (existingTarget == true and crop.name ~= targetCropName) then
+                    clearDown()
+                elseif scanner.isWeed(crop, 'storage') then
+                    clearDown()
+                else
+                    database.updateStorage(slot, crop)
+                end
+            end
+        end
+    end
+end
+
+
 return {
     needCharge = needCharge,
     charge = charge,
@@ -269,5 +295,6 @@ return {
     transplant = transplant,
     cleanUp = cleanUp,
     initWork = initWork,
-    clearDown = clearDown
+    clearDown = clearDown,
+    analyzeStorage = analyzeStorage
 }
