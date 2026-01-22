@@ -128,7 +128,7 @@ local function harvest()
         dumpInventory()
         gps.resume()
     end
-    
+
     robot.swingDown()
     robot.suckDown()
 end

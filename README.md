@@ -29,7 +29,7 @@ The following requires access to EV circuits and epoxid (mid-late HV). It is pos
 
 ![CropBot-Components](media/CropBot-Components.png?)
 
-Lastly, you need a Transvector Binder and Transvector Dislocator which requires some progression in Thaumcraft. Neither are very difficult to craft even if you have yet to start Thaumcraft. In the thaumonomicon, Transvector Dislocator can be found under "Thaumic Tinkerer" which requires both Transvector Interface and Smokey Quartz on the same tab. You will also need to complete research on Mirror Magic under "Artifice." For more information, visit https://gtnh.miraheze.org/wiki/Thaumcraft_Research_Cheatsheet.
+Lastly, you need a Transvector Binder and Transvector Dislocator which requires some progression in Thaumcraft. Neither are very difficult to craft even if you have yet to start Thaumcraft. In the thaumonomicon, Transvector Dislocator can be found under "Thaumic Tinkerer" which requires both Transvector Interface and Smokey Quartz on the same tab. You will also need to complete research on Mirror Magic under "Artifice." For more information, visit https://wiki.gtnewhorizons.com/wiki/Thaumcraft_Research_Cheatsheet.
 
 [1]  In GTNH 2.7.0, the APU (yellow) was renamed from Tier 2 to Tier 1. Follow the image if you are unsure.
 [2]  The EEPROM without Lua BIOS does not work.
@@ -120,7 +120,7 @@ Turn off the OC Charger to **pause** the robot during any of these programs. The
 
 ## Recommended Crops
 
-For starters, it is recommend to use the following crops because their outputs are useful and not completely overshadowed by bees. Note that every crop has a higher chance of being discovered with specific parent combinations, but it is often easier to discover a crop from crossbreeding at the same tier. For example, diareed has the highest chance of being discovered when the parents are oilberry and bobsyeruncleranks, BUT it is much easier to just run autoTier with all Tier 12 crops (or autoSpread with keepMutations on in the config). Crops that require a particular block underneath do not need to be fully grown in order to spread. For a full list of crops and their requirements, visit https://gtnh.miraheze.org/wiki/IC2_Crops_List.
+For starters, it is recommend to use the following crops because their outputs are useful and not completely overshadowed by bees. Note that every crop has a higher chance of being discovered with specific parent combinations, but it is often easier to discover a crop from crossbreeding at the same tier. For example, diareed has the highest chance of being discovered when the parents are oilberry and bobsyeruncleranks, BUT it is much easier to just run autoTier with all Tier 12 crops (or autoSpread with keepMutations on in the config). Crops that require a particular block underneath do not need to be fully grown in order to spread. For a full list of crops and their requirements, visit https://wiki.gtnewhorizons.com/wiki/IC2_Crops_List.
 
 - **Stickreed** for sticky resin and discovering/breeding with other crops
 - **Spruce Bonsai** for all of your benzene and power needs
