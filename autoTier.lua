@@ -180,6 +180,7 @@ local function main()
 
     -- First Run
     tierOnce(true)
+    database.analyzeStorage(false)
     action.restockAll()
     updateLowest()
 

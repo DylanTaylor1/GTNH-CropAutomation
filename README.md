@@ -118,6 +118,8 @@ Turn off the OC Charger to **pause** the robot during any of these programs. The
 
 8) **Config changes are not saving.** Any changes made to config.lua must be saved before restarting the robot. Save changes by pressing CTRL+S and exit with CTRL+W.
 
+9) **The robot fails to properly teleport crops to the storage farm.** _Make sure your storage farm's maximum size matches the Transvector Dislocator's maximum range (default: 16 blocks)._
+
 ## Recommended Crops
 
 For starters, it is recommend to use the following crops because their outputs are useful and not completely overshadowed by bees. Note that every crop has a higher chance of being discovered with specific parent combinations, but it is often easier to discover a crop from crossbreeding at the same tier. For example, diareed has the highest chance of being discovered when the parents are oilberry and bobsyeruncleranks, BUT it is much easier to just run autoTier with all Tier 12 crops (or autoSpread with keepMutations on in the config). Crops that require a particular block underneath do not need to be fully grown in order to spread. For a full list of crops and their requirements, visit https://wiki.gtnewhorizons.com/wiki/IC2_Crops_List.

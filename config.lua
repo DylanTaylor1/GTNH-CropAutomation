@@ -36,6 +36,9 @@ local config = {
     -- Max breeding round before termination of autoSpread or autoTier
     maxBreedRound = 1000,
 
+    -- Check existing crops on the storage farm before spreading or tiering
+    checkStorageBefore = false,
+
     -- =========== DO NOT CHANGE ===========
 
     -- The coordinate for the charger
